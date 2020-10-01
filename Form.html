@@ -1,56 +1,82 @@
 <!DOCTYPE html>
 <html lang="en" dir="ltr">
-  <head>
+
+<head>
     <meta charset="utf-8">
 
     <title>Survey</title>
+    <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.5.2/css/bootstrap.min.css" integrity="sha384-JcKb8q3iqJ61gNV9KGb8thSsNjpSL0n8PARn9HuZOnIxN0hoP+VmmDGMN5t9UJ0Z" crossorigin="anonymous">
     <style>
-    hr{height: 0;
-       width: 70%;
-     border-style: solid none none;
-     border-color: #0f4c75;
-     border-width: 3px;}
-     h1{background: #fdba9a;
-     color:  #c02739 }
+        .slider {
+            width: 35%;
+        }
+        
+        hr {
+            height: 0;
+            width: 70%;
+            border-style: solid none none;
+            border-color: #0f4c75;
+            border-width: 3px;
+        }
+        
+        h1 {
+            background: #fdba9a;
+            color: #c02739
+        }
+        
+        .vl {
+            border-left: 4px solid #0f4c75;
+            height: 932px;
+            position: absolute;
+            left: 50%;
+            margin-left: -3px;
+            top: 0;
+        }
+        
+        .submit {
+            align: center;
+        }
+        
+        body {
+            background-color: #bbe1fa;
+        }
+        
+        .container {
+            margin: 20px;
+            padding: 10px;
+        }
+        
+        form {
+            padding: 20px;
+        }
+        
+        .mid {
+            margin-left: 35%;
+        }
     </style>
-  </head>
-  <body style="background-color: #bbe1fa ;">
-    <table cellspacing="100">
-      <tr>
-        <td>  <style >
-          .vl {
-      border-left: 4px solid #0f4c75;
-      height: 932px;
-      position: absolute;
-      left: 50%;
-      margin-left: -3px;
-      top: 0;}
-          </style>
-          <div class="vl"></div>
+</head>
 
-          <form action="mailto:info@devanshpratap25.com" method="post" enctype="text/plain">
-            <label><h2> 1. The first web page that went live was</h2></label> <br>
-            <input type="checkbox" name="CERN" value="">
-            <label>CERN </label> <img src="https://emojipedia-us.s3.dualstack.us-west-1.amazonaws.com/thumbs/240/joypixels/239/scientist_1f9d1-200d-1f52c.png" alt="" width="30" height="30" ><br>
-            <input type="checkbox" name="Google" value="">
-            <label>Google </label> <img src="https://img.favpng.com/16/0/23/google-chrome-computer-icons-web-browser-logo-png-favpng-D6v5u7dBhv5EW71u4r8j3KjS9.jpg" alt=""  width="30" height="30" > <br>
-            <input type="checkbox" name="NASA" value="">
-            <label>NASA </label> <img src="https://img.favpng.com/10/16/25/logo-nasa-insignia-desktop-wallpaper-vector-graphics-png-favpng-GwahJ2EqWa7N6sT3rqCgjnd6S.jpg" alt=""  width="30" height="30"><br>
-      <hr align="center">
-      <label><h2>2. Who created world's first website?</h2> </label><br>
-        (Insetr your answer here)
-      <textarea name="Name" rows="1" cols="30" autofocus></textarea>
-      <hr align="center">
-      <label><h2>3. On a scale of 1 to 10, how much would you give<br> yourself for  Interest in Websites. </h2> </label>
-      (Slide it to tell us)
-      <input type="range" list="numbers" min="1" max="10" value="0" class="slider" >
-      <style>
-        .slider{
+<body>
+    <h1 class="text-center">Survey Form</h1>
+    <div class="container">
+        <div class="col-6">
 
-        width: 35%;
-      }
-      </style>
-      <datalist id="tickmarks">
+            <form action="mailto:info@devanshpratap25.com" method="post" enctype="text/plain">
+                <label><h2> 1. The first web page that went live was</h2></label> <br>
+                <input type="checkbox" name="CERN" value="cern">
+                <label>CERN </label> <img src="https://emojipedia-us.s3.dualstack.us-west-1.amazonaws.com/thumbs/240/joypixels/239/scientist_1f9d1-200d-1f52c.png" alt="" width="30" height="30"><br>
+                <input type="checkbox" name="Google" value="google">
+                <label>Google </label> <img src="https://img.favpng.com/16/0/23/google-chrome-computer-icons-web-browser-logo-png-favpng-D6v5u7dBhv5EW71u4r8j3KjS9.jpg" alt="" width="30" height="30"> <br>
+                <input type="checkbox" name="NASA" value="nasa">
+                <label>NASA </label> <img src="https://img.favpng.com/10/16/25/logo-nasa-insignia-desktop-wallpaper-vector-graphics-png-favpng-GwahJ2EqWa7N6sT3rqCgjnd6S.jpg" alt="" width="30" height="30"><br>
+                <br>
+                <label><h2>2. Who created world's first website?</h2> </label><br> (Insert your answer here)
+                <textarea name="Name" rows="1" cols="30" autofocus></textarea>
+                <br>
+                <label><h2>3. On a scale of 1 to 10, how much would you give<br> yourself for  Interest in Websites. </h2> </label> (Slide it to tell us)
+                <input type="range" list="numbers" min="1" max="10" value="0" class="slider">
+                <br>
+                <datalist id="tickmarks">
         <option value="0"></option>
         <option value="10" label="10"> </option>
         <option value="20" lable="20"></option>
@@ -63,59 +89,69 @@
         <option value="90" lable="90"></option>
         <option value="100" lable="100"></option>
       </datalist>
-      <hr align="center">
-      <label><h2>How old are you(To know the age group)</h2> </label>
-      <input type="date" name="date" value="" min="1950-01-01" max="2010-12-31">
-      <hr align="center">
-      <h2>Thank You, You were awesome👍😎</h2><br>
-      <label>We can update and remind you for the upcoming DSC events</label><br>
-      <label>Enter your Email here:</label>
-      <input type="email" name="" value=""><br>
-      <input  type="submit" name="Submit">
-      <style >
-        .submit {align : center;}
-      </style>
-          </form>
+                <br>
+                <label><h2>How old are you(To know the age group)</h2> </label>
+                <input type="date" name="date" value="" min="1950-01-01" max="2010-12-31">
+
+                <br>
+                <h2>Thank You, You were awesome👍😎</h2><br>
+                <label>We can update and remind you for the upcoming DSC events</label><br>
+                <label>Enter your Email here:</label>
+                <input type="email" name="" value=""><br>
+                <input type="submit" name="Submit" class="btn btn-success">
+            </form>
 
 
-</td>
-        <td><table cellspacing="40">
-          <tr>
-            <td><h1 align="center" >Some old websites that are still running, <br> go on, take yourself to <br> "THE 90's" </h1></td>
-          </tr>
-          <tr>
-            <td><a href="https://www.vortex.com/"><img align="center" src="https://thoughtcatalog.files.wordpress.com/2018/09/vortex.jpg?w=786&h=359" alt="" width="300" height="210"> 👈Click Here</a></td>
-          </tr>
-          <tr>
-            <td><a href="http://tic.com/index.html"><img align="center" src="https://thoughtcatalog.files.wordpress.com/2018/09/tic.jpg?w=786&h=460" alt="" width="300" height="210">👈Click Here</a></td>
-          </tr>
-        </table>
-          </body>
-        </html></td>
-      </tr>
+            </td>
+        </div>
+        <div class="col-6">
+
+            <h1 class="text-center">Some old websites that are still running, <br> go on, take yourself to <br> "THE 90's" </h1>
+            <a href="https://www.vortex.com/"><img align="center" src="https://thoughtcatalog.files.wordpress.com/2018/09/vortex.jpg?w=786&h=359" alt="" width="300" height="210"> 👈Click Here</a>
+
+            <a href="http://tic.com/index.html"><img align="center" src="https://thoughtcatalog.files.wordpress.com/2018/09/tic.jpg?w=786&h=460" alt="" width="300" height="210">👈Click Here</a>
+
+        </div>
+    </div>
+    <hr>
+    <h2 class="text-center"> Contacts Us</h2><br>
+    <table align="center" cellspacing="60">
+        <form action="mailto:info@devanshpratap25.com" method="post" enctype="text/plain">
+            <div class="mid">
+                <label>Your Messege:</label>
+                <textarea name="name" rows="3" cols="40"></textarea><br>
+                <input type="submit" name="Submit" class="btn btn-success">
+            </div>
+        </form>
+
+        </td>
+        <td>
+            <table cellspacing="20">
+                <tr>
+                    <td>
+                        <a href="https://twitter.com/DSC_SRM"><img width="30" height="30" src="https://srmdsc.com/assets/img/twitter.png" alt="Twitter"> </a>
+                    </td>
+                    <td>
+                        <a href="https://www.facebook.com/dscsrm"><img width="30" height="30" src="https://srmdsc.com/assets/img/fb.png" alt="Facebook"> </a>
+                    </td>
+                    <td>
+                        <a href="https://www.linkedin.com/company/srm-developer-student-club"><img width="30" height="30" src="https://srmdsc.com/assets/img/linkedin.png" alt="LinkedIn"> </a>
+                    </td>
+                    <td><a align="left" href="https://srmdsc.com/">Our Website</a></td>
+                </tr>
+                <tr>
+                    <td>👆</td>
+                    <td>👆</td>
+                    <td>👆</td>
+                    <td>👆</td>
+                </tr>
+            </table>
+        </td>
+        </tr>
     </table>
-<hr>
-<h2 align="center"> Contacts Us</h2><br>
-<table align="center" cellspacing="60">
-  <tr>
-    <td><form action="mailto:info@devanshpratap25.com" method="post" enctype="text/plain">
-      <label>Your Messege:</label>
-      <textarea name="name" rows="3" cols="40"></textarea><br>
-        <input  type="submit" name="Submit">
-    </form></td>
-    <td><table cellspacing="20">
-      <tr>
-        <td><a href="https://twitter.com/DSC_SRM"><img width="30" height="30" src="https://srmdsc.com/assets/img/twitter.png" alt="Twitter"> </a></td>
-        <td><a href="https://www.facebook.com/dscsrm"><img width="30" height="30" src="https://srmdsc.com/assets/img/fb.png" alt="Facebook"> </a></td>
-        <td><a href="https://www.linkedin.com/company/srm-developer-student-club"><img width="30" height="30" src="https://srmdsc.com/assets/img/linkedin.png" alt="LinkedIn"> </a></td>
-        <td><a align="left" href="https://srmdsc.com/">Our Website</a></td>
-      </tr>
-      <tr>
-        <td>👆</td>
-        <td>👆</td>
-        <td>👆</td>
-        <td>👆</td>
-      </tr>
-    </table></td>
-  </tr>
-</table>
+    <script src="https://code.jquery.com/jquery-3.5.1.slim.min.js" integrity="sha384-DfXdz2htPH0lsSSs5nCTpuj/zy4C+OGpamoFVy38MVBnE+IbbVYUew+OrCXaRkfj" crossorigin="anonymous"></script>
+    <script src="https://cdn.jsdelivr.net/npm/popper.js@1.16.1/dist/umd/popper.min.js" integrity="sha384-9/reFTGAW83EW2RDu2S0VKaIzap3H66lZH81PoYlFhbGU+6BZp6G7niu735Sk7lN" crossorigin="anonymous"></script>
+    <script src="https://stackpath.bootstrapcdn.com/bootstrap/4.5.2/js/bootstrap.min.js" integrity="sha384-B4gt1jrGC7Jh4AgTPSdUtOBvfO8shuf57BaghqFfPlYxofvL8/KUEfYiJOMMV+rV" crossorigin="anonymous"></script>
+</body>
+
+</html>
